@@ -1,0 +1,68 @@
+<ion-content class="swiper-no-swiping">
+  <!-- <div class="container top ion-text-center" [hidden]="keyboard.isVisible"> -->
+  <div class="container top ion-text-center">
+    <img src="/assets/img/images.png" />
+
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="login" checked>
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="register">
+        <ion-label>Cadastro</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-slides>
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Login</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" placeHolder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" placeHolder="Senha" [(ngModel)]="userLogin.senha"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="login()" color="light" expand="block">
+          Entrar
+        </ion-button>
+
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Cadastro</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="text" placeHolder="Nome" [(ngModel)]="userRegister.nome"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" placeHolder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" placeHolder="Senha" [(ngModel)]="userRegister.senha"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="register()" color="light" expand="block">
+          Cadastrar
+        </ion-button>
+
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="background">
+    <div class="stripes" [ngStyle]="{'background-position-x': stripesDirection + 'px'}"></div>
+
+    <!-- <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible"> -->
+    <div class="container bottom ion-text-center">
+      <span>O aplicativo que foi feito para o gerenciamento dos produtos na sua cestinha de compras!</span>
+    </div>
+  </div>
+</ion-content>

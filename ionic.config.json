@@ -1,5 +1,7 @@
 {
   "name": "qual-o-preco",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
